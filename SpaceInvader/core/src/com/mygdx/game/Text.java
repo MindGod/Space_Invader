@@ -13,7 +13,6 @@ public class Text {
     public void create() {
         batch = new SpriteBatch();
         font = new BitmapFont();
- 
         font.getData().setScale(1.5f, 1.5f);
     }
  
@@ -22,9 +21,11 @@ public class Text {
     }
  
     public void render() {
+    	
         batch.begin();
         font.draw(batch, str, 100, Gdx.graphics.getHeight() - 30);
         font.draw(batch, str2, 500, Gdx.graphics.getHeight() - 30);
+        
         batch.end();
     }
  

@@ -7,15 +7,20 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  
 public class Defender {
  
-    Texture defender;
+    static Texture defender;
     SpriteBatch batch;
-    int x, y;
+    Bullet bullet;
+    static float x;
+	int y;
     int width, height;
     float speed;
  
     public void create() {
         defender = new Texture(Gdx.files.internal("Defender.png"));
         batch = new SpriteBatch();
+        
+        bullet = new Bullet();
+        bullet.create();
  
         x = 75;
         y = 10;
@@ -27,9 +32,8 @@ public class Defender {
     }
  
     public void update() {
-    	if (Gdx.input.isKeyJustPressed(Keys.SPACE)) {
-    		
-    	}
+    	
+    	
         if (Gdx.input.isKeyPressed(Keys.A)) {
             x -= speed;
         }
@@ -43,6 +47,7 @@ public class Defender {
         if (x > (Gdx.graphics.getWidth() - defender.getWidth())) {
             x = Gdx.graphics.getWidth() - defender.getWidth();
         }
+       
  
        
     }
@@ -57,5 +62,9 @@ public class Defender {
  
     public void dispose() {
         batch.dispose();
+    }
+    
+    public float getX() {
+    	return x;
     }
 }

@@ -12,6 +12,7 @@ public class SpaceInvador extends ApplicationAdapter {
     Defender defender;
     Cube cube_1;
     Text text;
+    Bullet bullet;
  
     @Override
     public void create() {
@@ -33,11 +34,14 @@ public class SpaceInvador extends ApplicationAdapter {
  
         text = new Text();
         text.create();
+        
+        bullet = new Bullet();
+        bullet.create();
  
     }
  
     public void update() {
- 
+    	
     }
  
     @Override
@@ -50,6 +54,7 @@ public class SpaceInvador extends ApplicationAdapter {
         defender.render();
         cube_1.render();
         text.render();
+        bullet.render();
  
     }
  
@@ -61,6 +66,7 @@ public class SpaceInvador extends ApplicationAdapter {
         defender.dispose();
         cube_1.dispose();
         text.dispose();
+        bullet.dispose();
  
     }
 }
